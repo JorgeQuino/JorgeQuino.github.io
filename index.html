@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRIANGULOS</title>
+    <title>Sanana Rico L.</title>
     <style>
         body {
             display: flex;
@@ -209,6 +209,10 @@
             background: url('https://www.example.com/triangle_icon.png') no-repeat center;
             background-size: contain;
         }
+        input[type="number"] {
+    text-align: center;
+}
+
     </style>
 </head>
 
@@ -268,7 +272,7 @@
             if (!isFilled) {
                 var hipotenusaSquared = (inputA * inputA + inputB * inputB).toFixed(2);
 
-                document.getElementById('result').textContent = 'Hipotenusa²: ' + hipotenusaSquared;
+                document.getElementById('result').textContent = 'Hipotenusa: ' + hipotenusaSquared;
 
                 formula.innerHTML = 'C² = a² + b² <br> C² = ' + inputA + '² + ' + inputB + '² <br> C² = ' + hipotenusaSquared;
 
