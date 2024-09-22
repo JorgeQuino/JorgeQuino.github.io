@@ -23,7 +23,7 @@
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 20px;
             color: #8B4513;
             margin: 20px 0;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
@@ -40,17 +40,17 @@
         }
 
         .flower {
-            width: 150px;
-            height: 150px;
-            margin: 20px;
+            width: 100px; /* Tamaño más pequeño para móviles */
+            height: 100px;
             position: relative;
             opacity: 0;
             animation: fadeIn 1s forwards, fadeOut 1s forwards 3s;
+            animation-iteration-count: infinite; /* Hacer que el ciclo sea infinito */
         }
 
         .petal {
-            width: 50px;
-            height: 100px;
+            width: 30px;
+            height: 60px;
             border-radius: 50%;
             position: absolute;
             top: 50%;
@@ -73,6 +73,7 @@
 
         @keyframes fadeIn {
             0% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; }
             100% { opacity: 1; transform: scale(1); }
         }
 
@@ -92,14 +93,14 @@
     <script>
         function createFlower() {
             const flowerContainer = document.querySelector(".flower-container");
-            const maxFlowersOnScreen = 25; // Aumenté el número máximo de flores
+            const maxFlowersOnScreen = 25;
 
             if (document.querySelectorAll(".flower").length >= maxFlowersOnScreen) {
-                return; // No crear más flores
+                return;
             }
 
             const maxFlowers = Math.ceil(Math.random() * 5 + 1);
-            const flowerSize = 150;
+            const flowerSize = 100;
             const existingPositions = [];
 
             for (let j = 0; j < maxFlowers; j++) {
@@ -139,11 +140,11 @@
 
                 setTimeout(() => {
                     flower.remove();
-                }, 4000); // Duración total de la animación
+                }, 4000);
             }
         }
 
-        setInterval(createFlower, 3000); // Aumenté la frecuencia de creación de flores
+        setInterval(createFlower, 2000); // Frecuencia aumentada
     </script>
 </body>
 </html>
